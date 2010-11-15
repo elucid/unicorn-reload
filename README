@@ -1,0 +1,15 @@
+unicorn-reload
+
+sample app to demonstrate no-downtime reloads with unicorn.
+
+usage:
+* checkout the app at initial commit (i.e. no fastercsv in Gemfile)
+* bundle install (preferably inside of a fresh rvm gemset)
+* start the server e.g. with
+unicorn master -D -c /path/to/checkout/unicorn.rb /path/to/checkout/config.ru
+* hit the server at /foo or /bar; /fcsv will 404
+* checkout the second revision (i.e. the one that introduces fastercsv)
+* bundle install
+* reload
+kill -USR2 `cat log/unicorn.pid`
+* hit /fcsv
