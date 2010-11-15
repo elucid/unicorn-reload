@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    fastercsv (1.5.3)
     kgio (1.3.1)
     rack (1.2.1)
     sinatra (1.1.0)
@@ -15,5 +16,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fastercsv
   sinatra
   unicorn
